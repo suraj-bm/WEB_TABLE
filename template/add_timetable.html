@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Timetable</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Add New Timetable</h2>
+        
+        <form method="post">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="day_of_week">Day of the Week</label>
+                <select name="day_of_week" id="day_of_week" class="form-control" required>
+                    <option value="Monday" {% if form.day_of_week.value == "Monday" %}selected{% endif %}>Monday</option>
+                    <option value="Tuesday" {% if form.day_of_week.value == "Tuesday" %}selected{% endif %}>Tuesday</option>
+                    <option value="Wednesday" {% if form.day_of_week.value == "Wednesday" %}selected{% endif %}>Wednesday</option>
+                    <option value="Thursday" {% if form.day_of_week.value == "Thursday" %}selected{% endif %}>Thursday</option>
+                    <option value="Friday" {% if form.day_of_week.value == "Friday" %}selected{% endif %}>Friday</option>
+                    <option value="Saturday" {% if form.day_of_week.value == "Saturday" %}selected{% endif %}>Saturday</option>
+                    <option value="Sunday" {% if form.day_of_week.value == "Sunday" %}selected{% endif %}>Sunday</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="start_time">Start Time</label>
+                {{ form.start_time }}
+            </div>
+            
+            <div class="form-group">
+                <label for="end_time">End Time</label>
+                {{ form.end_time }}
+            </div>
+
+            <div class="form-group">
+                <label for="course_code">Course Code (Optional)</label>
+                {{ form.course_code }}
+            </div>
+
+            <div class="form-group">
+                <label for="course_name">Course Name (Optional)</label>
+                {{ form.course_name }}
+            </div>
+
+            <div class="form-group">
+                <label for="room">Room (Optional)</label>
+                {{ form.room }}
+            </div>
+
+            <div class="form-group">
+                <label for="instructor">Instructor (Optional)</label>
+                {{ form.instructor }}
+            </div>
+
+            <div class="form-group">
+                <label for="is_break">Is Break?</label>
+                {{ form.is_break }}
+            </div>
+
+            <!-- <h3>Time Slots</h3>
+            
+            <div class="form-group">
+                <label for="time_08_00_09_00">08:00 - 09:00</label>
+                {{ form.time_08_00_09_00 }}
+            </div>
+            
+            <div class="form-group">
+                <label for="time_09_00_10_00">09:00 - 10:00</label>
+                {{ form.time_09_00_10_00 }}
+            </div>
+            
+            <div class="form-group">
+                <label for="time_10_00_11_00">10:00 - 11:00</label>
+                {{ form.time_10_00_11_00 }}
+            </div>
+
+            <div class="form-group">
+                <label for="time_11_00_12_00">11:00 - 12:00</label>
+                {{ form.time_11_00_12_00 }}
+            </div>
+
+            <div class="form-group">
+                <label for="time_12_00_13_00">12:00 - 13:00</label>
+                {{ form.time_12_00_13_00 }}
+            </div>
+
+            <div class="form-group">
+                <label for="time_13_00_14_00">13:00 - 14:00</label>
+                {{ form.time_13_00_14_00 }}
+            </div>
+
+            <div class="form-group">
+                <label for="time_14_00_15_00">14:00 - 15:00</label>
+                {{ form.time_14_00_15_00 }}
+            </div>
+
+            <div class="form-group">
+                <label for="time_15_00_16_00">15:00 - 16:00</label>
+                {{ form.time_15_00_16_00 }}
+            </div> -->
+
+            <button type="submit" class="btn btn-primary">Save Timetable</button>
+            <a href="{% url 'timetable_view' %}" class="btn btn-secondary">Back to Timetables</a>
+        </form>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

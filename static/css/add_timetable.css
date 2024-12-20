@@ -1,0 +1,108 @@
+/* Body and container styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    padding-top: 30px;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styles */
+h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+h3 {
+    font-size: 24px;
+    color: #16a085;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Form Styles */
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    color: #7f8c8d;
+}
+
+input, select, button {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 12px;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+input:focus, select:focus, button:focus {
+    border-color: #16a085;
+    outline: none;
+}
+
+/* Button Styles */
+button {
+    background-color: #16a085;
+    color: white;
+    border: none;
+    font-size: 18px;
+    padding: 12px 20px;
+    cursor: pointer;
+    width: auto;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #1abc9c;
+}
+
+a.btn-secondary {
+    background-color: #95a5a6;
+    color: white;
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+a.btn-secondary:hover {
+    background-color: #7f8c8d;
+}
+
+/* Time Slot Section */
+.form-group label {
+    font-weight: bold;
+}
+
+/* Optional Fields Styling */
+.form-group input, .form-group select {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+h3 {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 20px;
+}
+
+/* Add some space between form groups */
+.form-group:not(:last-child) {
+    margin-bottom: 25px;
+}

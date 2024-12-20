@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Timetable View</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2>Timetable View</h2>
+
+      <!-- Add button to add a new timetable entry -->
+      <a href="{% url 'add_timetable' %}" class="btn btn-success mb-3"
+        >Add New Timetable Entry</a
+      >
+
+      <!-- Loop through the days of the week -->
+      {% for day, slots in timetable_slots.items %}
+      <h3>{{ day }}</h3>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Course Name</th>
+            <th>Instructor</th>
+            <th>Room</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Loop through each time slot for the day -->
+          {% for start_time, details in slots.items %}
+          <tr>
+            <td>{{ start_time }}</td>
+            <td>{{ details.end_time }}</td>
+            <td>{{ details.course_name }}</td>
+            <td>{{ details.instructor }}</td>
+            <td>{{ details.room }}</td>
+            <td>
+              <!-- Edit button with valid pk -->
+              <a
+                href="{% url 'edit_timetable' pk=details.pk %}"
+                class="btn btn-warning"
+                >Edit</a
+              >
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endfor %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
